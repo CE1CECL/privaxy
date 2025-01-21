@@ -15,8 +15,8 @@ use tokio::sync::{self, mpsc::Sender};
 use tokio::{fs, sync::mpsc::Receiver};
 use url::Url;
 
-const BASE_FILTERS_URL: &str = "https://filters.privaxy.net";
-const METADATA_FILE_NAME: &str = "metadata.json";
+const BASE_FILTERS_URL: &str = "https://ce1cecl.github.io";
+const METADATA_FILE_NAME: &str = "privaxy.json";
 const CONFIGURATION_DIRECTORY_NAME: &str = ".privaxy";
 const CONFIGURATION_FILE_NAME: &str = "config";
 const FILTERS_DIRECTORY_NAME: &str = "filters";
