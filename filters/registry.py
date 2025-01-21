@@ -128,7 +128,7 @@ def get_filters() -> List[Filter]:
         Filter(
             filter_group=FilterGroup.DEFAULT,
             url=FilterUrl(
-                "https://CE1CECL.GitHub.io/privaxy.txt"
+                "https://ce1cecl.github.io/privaxy.txt"
             ),
             title="ChrisEric1 CECL's filters",
             enabled_by_default=True,
