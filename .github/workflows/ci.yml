@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - uses: actions-rs/toolchain@v1
         with:
@@ -28,7 +28,7 @@ jobs:
 
       # Required for tailwindcss
       - name: Install node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 14
       - name: Install node packages
@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v5
 
       - name: Install rust
         uses: actions-rs/toolchain@v1
@@ -95,10 +95,10 @@ jobs:
             target: x86_64-pc-windows-msvc
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
 
       - name: Cache build artifacts
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key:  no_gui-${{ matrix.os }}-${{ matrix.target }}-artifacts
           path: |
@@ -125,14 +125,14 @@ jobs:
           command: build
           args: --release --target ${{ matrix.target }} --bin privaxy --target-dir target
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: matrix.os != 'windows-latest'
         with:
           name: privaxy_nogui-${{ matrix.target }}
           path: |
             target/${{ matrix.target }}/release/privaxy
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: matrix.os == 'windows-latest'
         with:
           name: privaxy_nogui-${{ matrix.target }}
@@ -156,10 +156,10 @@ jobs:
             rust: stable
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
 
       - name: Cache build artifacts
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key:  gui-${{ matrix.os }}-artifacts
           path: |
@@ -184,7 +184,7 @@ jobs:
 
       # Required for tailwindcss
       - name: Install node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 16
 
